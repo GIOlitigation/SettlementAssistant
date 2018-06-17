@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<title>Settlement Assistant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">GIO</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Calculator</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Help</a>
+  </div>
+</div>
+
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Wage Settlement Assistant</h1>
+	  <p>This tool is designed to split weekly compensation payments and deduct the necessary tax and Centrelink charge in accordance with the WC Act 1987 using Guidewire Claim Centre, allowing users to process the payments in the correct order without any errors or delays.</p>
+	  <p>For smooth and easy payments please ensure you have read the <a href="help.html">Help Page</a> beforehand.
+      <form>
+	  Workers Name:<br>
+	  <input type="text" name="workerName"><br>
+	  Claim Number:<br>
+	  <input type="text" name="claimNumber"><br><br>
+	  Weeks Paid:<br>
+	  <input type="number" name="weeksPaid"><br>
+	  Last 'Date To' Paid:<br>
+	  <input type="date" name="dateToPaid"><br>
+	  Start Day of Week:<br>
+	  <select name="startDay">
+	  <option value="1">Sunday</option>
+	  <option value="2">Monday</option>
+	  <option value="3">Tuesday</option>
+	  <option value="4">Wednesday</option>
+	  <option value="5">Thursday</option>
+	  <option value="6">Friday</option>
+	  <option value="7">Saturday</option>
+	  </select><br>
+	  Centrelink Charge:<br>
+	  <input type="text" name="centrelinkCharge"><br>
+	  <input type="checkbox" name="checkTFN" value="TFN"> TFN Dec On File<br>
+	  <input type="checkbox" name="checkThreshold" value="taxfreeThreshold"> Tax Free Threshold<br><br>
+	  Number Of Periods To Pay:<br>
+	  <input type="number" min="1" max="20" name="payPeriods" id="payPeriods" onchange="addPeriods()" value=""><br><br>
+	  <div id="multiContainer">
+	  </div>
+	  <input type="button" onClick="calculate()" value="Calculate">
+	  </form>
+    </div>
+	<div class="class="w3-main" style="margin-left:300px; margin-top:250px;">
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">Result</p>
+    </div>
+  </div>
+  
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Footer</h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+<script src="scripts.js"></script>
+</div>
+</body>
+</html>
