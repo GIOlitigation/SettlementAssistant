@@ -14,7 +14,7 @@ function addPeriods(){
                 container.appendChild(document.createElement("br"));
                 // Create an <input> element, set its type and name attributes
                 var inputFrom = document.createElement("input");
-                inputFrom.type = "date";
+                inputFrom.type = "text";
                 inputFrom.name = "dateFrom" + i;
                 container.appendChild(inputFrom);
                 // Append a line break 
@@ -23,7 +23,7 @@ function addPeriods(){
                 container.appendChild(document.createElement("br"));
                 // Create an <input> element, set its type and name attributes
                 var inputTo = document.createElement("input");
-                inputTo.type = "date";
+                inputTo.type = "text";
                 inputTo.name = "dateTo" + i;
                 container.appendChild(inputTo);
                 // Append a line break 
